@@ -19,9 +19,7 @@ public class CadastroEstudante {
     public Estudante buscar(String cpf) {
         return repositorio.buscar(cpf);
     }
-    public List<Estudante> mostrarTodos(){
-        return repositorio.mostrarTodos();
-    }
+    public List<Estudante> mostrarTodos(){return repositorio.mostrarTodos();}
     public Estudante atualizar(Estudante empresa){
         return repositorio.atualizar(empresa);
     }
@@ -31,4 +29,4 @@ public class CadastroEstudante {
 }
 
 
-}
+

@@ -37,10 +37,7 @@ public class Estudante {
         this.curriculo = curriculo;
     }
 
-    public String getDataNascimento() {
-        return dataNascimento;
-
-    }
+    public String getDataNascimento() {return dataNascimento;    }
 
     public String getTelefone() {
         return telefone;

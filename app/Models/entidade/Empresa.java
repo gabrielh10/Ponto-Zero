@@ -10,10 +10,9 @@ public class Empresa {
     private String site;
     private Endereco endereco;
 
-
+    public Empresa(){}
     public Empresa(String id, String nome, String ramo, String cnpj, String telefone, String email, String site, Endereco endereco){
         this.id = id;
-
         this.nome = nome;
         this.ramo = ramo;
         this.cnpj = cnpj;

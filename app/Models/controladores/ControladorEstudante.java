@@ -1,5 +1,7 @@
 package Models.controladores;
 
+import Models.abstractfactory.RepositorioArrayFactory;
+import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEstudante;
 import Models.entidade.Estudante;
 
@@ -11,8 +13,12 @@ import java.util.List;
 public class ControladorEstudante {
     private CadastroEstudante cadastroEstudante;
 
-    public ControladorEstudante(){
-      //  cadEstudate = new CadastroEstudante(new Rep...);
+    public ControladorEstudante(String conf){
+        if(conf.contains("array")){
+            cadastroEstudante = new CadastroEstudante(new RepositorioArrayFactory());
+        } else {
+            cadastroEstudante = new CadastroEstudante(new RepositorioBDRFactory());
+        }
     }
 
     public void cadastrar(Estudante estudante){

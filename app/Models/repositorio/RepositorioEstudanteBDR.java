@@ -2,6 +2,7 @@ package Models.repositorio;
 
 import Models.entidade.Estudante;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,13 +13,13 @@ public class RepositorioEstudanteBDR implements IRepositorioEstudante {
 
     }
     public Estudante buscar(String cpf){
-
+        return new Estudante();
     }
     public List<Estudante> mostrarTodos(){
-
+        return new ArrayList<Estudante>();
     }
     public Estudante atualizar (Estudante estudante){
-
+        return new Estudante();
     }
     public void remover(Estudante estudante){
 

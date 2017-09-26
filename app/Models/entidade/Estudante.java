@@ -10,6 +10,8 @@ public class Estudante {
     private String email;
     private Curriculo curriculo;
 
+    public Estudante(){};
+
     private Estudante(String id, String nome, String cpf, String dataNascimento, String telefone, Endereco endereco, String email, Curriculo curriculo){
         this.id = id;
         this.nome = nome;

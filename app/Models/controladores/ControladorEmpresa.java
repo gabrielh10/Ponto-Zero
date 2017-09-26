@@ -1,8 +1,14 @@
 package Models.controladores;
 
+import Models.abstractfactory.RepositorioAbstractFactory;
+import Models.abstractfactory.RepositorioArrayFactory;
+import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEmpresa;
 import Models.entidade.Empresa;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
 
 /**
@@ -11,8 +17,12 @@ import java.util.List;
 public class ControladorEmpresa {
     private CadastroEmpresa cadastroEmpresa;
 
-    public ControladorEmpresa(){
-    //    cadEmpresa = new CadastroEmpresa(new RepositorioEmpresaTempo())
+    public ControladorEmpresa(String conf){
+            if(conf.contains("array")){
+                cadastroEmpresa = new CadastroEmpresa(new RepositorioArrayFactory());
+            } else {
+                cadastroEmpresa = new CadastroEmpresa(new RepositorioBDRFactory());
+            }
     }
 
     public void cadastrar(Empresa empresa){

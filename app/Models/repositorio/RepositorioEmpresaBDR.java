@@ -13,15 +13,17 @@ public class RepositorioEmpresaBDR implements IRepositorioEmpresa {
 
    }
    public Empresa buscar(String cnpj){
-
+       Empresa e = new Empresa();
+       return e;
    }
     public List<Empresa> mostrarTodas(){
-
+        ArrayList<Empresa> my = new ArrayList<Empresa>();
+        return my;
     }
-    Empresa atualizar(Empresa empresa){
-
+    public Empresa atualizar(Empresa empresa){
+        return empresa;
     }
-    void remover(Empresa empresa){
+    public void remover(Empresa empresa){
 
     }
 

@@ -1,3 +1,5 @@
+import Models.entidade.Empresa;
+import Models.fachada.Fachada;
 import akka.actor.ActorSystem;
 import controllers.AsyncController;
 import controllers.CountController;
@@ -5,8 +7,12 @@ import org.junit.Test;
 import play.mvc.Result;
 import scala.concurrent.ExecutionContextExecutor;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletionStage;
 
+import static Models.fachada.Fachada.fachada;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 import static play.test.Helpers.contentAsString;
@@ -22,6 +28,14 @@ public class UnitTest {
     public void simpleCheck() {
         int a = 1 + 1;
         assertThat(a).isEqualTo(2);
+    }
+    @Test
+    public void mytest() throws IOException {
+        Empresa minha = new Empresa();
+        fachada.getInstance();
+        fachada.cadastrarEmpresa(minha);
+        List<Empresa> array = fachada.mostrarTodasEmpresas();
+        assertThat(array.size()).isGreaterThan(0);
     }
 
     // Unit test a controller

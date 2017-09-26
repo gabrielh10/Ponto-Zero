@@ -1,5 +1,6 @@
 package Models.cadastros;
 
+import Models.abstractfactory.RepositorioAbstractFactory;
 import Models.entidade.Empresa;
 import Models.repositorio.IRepositorioEmpresa;
 
@@ -11,7 +12,9 @@ import java.util.List;
 public class CadastroEmpresa {
     private IRepositorioEmpresa repositorio;
 
-    public CadastroEmpresa(){}
+    public CadastroEmpresa(RepositorioAbstractFactory abstractFactory){
+        repositorio = abstractFactory.criarRepositoriosEmpresa();
+    }
 
     public void cadastrar(Empresa empresa){
         repositorio.cadastrar(empresa);

@@ -7,6 +7,10 @@ import Models.controladores.ControladorEstudante;
 import Models.entidade.Empresa;
 import Models.entidade.Estudante;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -17,18 +21,24 @@ public class Fachada {
     private ControladorEmpresa controladorEmpresa;
     private ControladorEstudante controladorEstudante;
 
-    private Fachada(){}
+    private Fachada() throws IOException {
+        fachada.getInstance();
+        String conf = choseRep();
+        controladorEmpresa = new ControladorEmpresa(conf);
+        controladorEstudante = new ControladorEstudante(conf);
+    }
 
-    public static Fachada getInstance(){               // singleton pattern
+    public static Fachada getInstance() throws IOException {               // singleton pattern
         if(fachada == null){
             fachada = new Fachada();
         }
         return fachada;
     }
 
-    public void choseRep(){             //lembrar de ajustar onde vai ficar e como passar o parametro de escolha
-        RepositorioBDRFactory rep = new RepositorioBDRFactory();
-
+    public String choseRep(){             //lembrar de ajustar onde vai ficar e como passar o parametro de escolha
+       //     BufferedReader buffer = new BufferedReader(new FileReader("arq.txt" ));
+      //      String conf = buffer.readLine();
+            return "array";
     }
 
     public void cadastrarEmpresa(Empresa empresa){

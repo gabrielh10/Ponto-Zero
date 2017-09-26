@@ -9,7 +9,7 @@ import java.util.List;
  * Created by ghds on 26/09/2017.
  */
 public class RepositorioEmpresaArray implements IRepositorioEmpresa {
-    private ArrayList<Empresa> rep;
+    private ArrayList<Empresa> rep = new ArrayList<>();
 
     public void cadastrar(Empresa empresa){
         rep.add(empresa);

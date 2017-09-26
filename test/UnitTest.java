@@ -1,5 +1,6 @@
 import Models.entidade.Empresa;
 import Models.fachada.Fachada;
+import Models.repositorio.RepositorioEmpresaArray;
 import akka.actor.ActorSystem;
 import controllers.AsyncController;
 import controllers.CountController;
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 
-import static Models.fachada.Fachada.fachada;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.awaitility.Awaitility.await;
 import static play.test.Helpers.contentAsString;
@@ -30,14 +30,20 @@ public class UnitTest {
         assertThat(a).isEqualTo(2);
     }
     @Test
-    public void mytest() throws IOException {
-        Empresa minha = new Empresa();
-        fachada.getInstance();
-        fachada.cadastrarEmpresa(minha);
-        List<Empresa> array = fachada.mostrarTodasEmpresas();
-        assertThat(array.size()).isGreaterThan(0);
+    public void checkRepository(){
+        RepositorioEmpresaArray rep = new RepositorioEmpresaArray();
+        rep.cadastrar(new Empresa());
+        assertThat(rep.mostrarTodas().size()).isEqualTo(1);
     }
 
+    @Test
+    public void checkFachada() throws IOException {
+        Fachada fachada = Fachada.getInstance();
+        fachada.cadastrarEmpresa(new Empresa());
+        fachada.cadastrarEmpresa(new Empresa());
+        int valor = fachada.mostrarTodasEmpresas().size();
+        assertThat(valor).isEqualTo(2);
+    }
     // Unit test a controller
     @Test
     public void testCount() {

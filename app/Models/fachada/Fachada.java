@@ -22,7 +22,7 @@ public class Fachada {
     private ControladorEstudante controladorEstudante;
 
     private Fachada() throws IOException {
-        fachada.getInstance();
+  //      fachada.getInstance();
         String conf = choseRep();
         controladorEmpresa = new ControladorEmpresa(conf);
         controladorEstudante = new ControladorEstudante(conf);

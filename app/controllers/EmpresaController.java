@@ -50,7 +50,6 @@ public class EmpresaController extends Controller {
             return badRequest();
         }
         Empresa empresa = form.get();
-        System.out.println(empresa.getCnpj());
         getInstance().cadastrarEmpresa(empresa);
         List<Empresa> todasEmpresas = getInstance().mostrarTodasEmpresas();
         return ok(empresaList.render(todasEmpresas));

@@ -2,6 +2,7 @@ package Models.cadastros;
 
 import Models.abstractfactory.RepositorioAbstractFactory;
 import Models.entidade.Empresa;
+import Models.entidade.Vaga;
 import Models.repositorio.IRepositorioEmpresa;
 
 import java.util.List;
@@ -30,5 +31,14 @@ public class CadastroEmpresa {
     }
     public void remover(Empresa empresa){
         repositorio.remover(empresa);
+    }
+    public void adicionarVaga(Vaga vaga, String cnpj){
+        repositorio.adicionarVaga(vaga, cnpj);
+    }
+    public void removerVaga(String idVaga, String cnpjEmpresa){
+        repositorio.removerVaga(idVaga, cnpjEmpresa);
+    }
+    public Vaga buscarVaga(String idVaga, String cnpjEmpresa){
+        return repositorio.buscarVaga(idVaga, cnpjEmpresa);
     }
 }

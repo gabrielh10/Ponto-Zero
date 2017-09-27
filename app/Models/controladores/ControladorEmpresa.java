@@ -5,6 +5,7 @@ import Models.abstractfactory.RepositorioArrayFactory;
 import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEmpresa;
 import Models.entidade.Empresa;
+import Models.entidade.Vaga;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -44,4 +45,13 @@ public class ControladorEmpresa {
         cadastroEmpresa.remover(empresa);
     }
 
+    public void adicionarVaga(Vaga vaga, String cnpj){
+        cadastroEmpresa.adicionarVaga(vaga, cnpj);
+    }
+    public Vaga buscarVaga(String idVaga, String cnpj){
+        return cadastroEmpresa.buscarVaga(idVaga, cnpj);
+    }
+    public void removerVaga(String idVaga, String cnpj){
+        cadastroEmpresa.removerVaga(idVaga, cnpj);
+    }
 }

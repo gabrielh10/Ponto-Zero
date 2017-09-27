@@ -6,6 +6,7 @@ import Models.controladores.ControladorEmpresa;
 import Models.controladores.ControladorEstudante;
 import Models.entidade.Empresa;
 import Models.entidade.Estudante;
+import Models.entidade.Vaga;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -59,6 +60,15 @@ public class Fachada {
     public void removerEmpresa(Empresa empresa){
 
         controladorEmpresa.remover(empresa);
+    }
+    public void adicionarVaga(Vaga vaga, String cnpj){
+        controladorEmpresa.adicionarVaga(vaga, cnpj);
+    }
+    public Vaga buscarVaga(String idVaga, String cnpj){
+        return controladorEmpresa.buscarVaga(idVaga, cnpj);
+    }
+    public void removerVaga(String idVaga, String cnpj){
+        controladorEmpresa.removerVaga(idVaga, cnpj);
     }
 
     public void cadastrarEstudante(Estudante estudante)

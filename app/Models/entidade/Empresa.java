@@ -11,6 +11,12 @@ public class Empresa {
     private Endereco endereco;
 
     public Empresa(){}
+
+    public Empresa(String id, String nome, String cnpj){
+        this.id = id;
+        this.nome = nome;
+        this.cnpj = cnpj;
+    }
     public Empresa(String id, String nome, String ramo, String cnpj, String telefone, String email, String site, Endereco endereco){
         this.id = id;
         this.nome = nome;
@@ -19,7 +25,7 @@ public class Empresa {
         this.telefone = telefone;
         this.email = email;
         this.site = site;
-        this.endereco = endereco;
+        this.endereco = null;
     }
 
     public String getId() {

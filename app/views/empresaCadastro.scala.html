@@ -1,0 +1,19 @@
+@(empresa: Form[Models.entidade.Empresa])
+@import helper._
+
+@main("Cadastrar Empresa") {
+ @helper.form(action = helper.CSRF(routes.EmpresaController.recebeFormEmpresa())) {
+  <fieldset>
+   @helper.inputText(empresa("id"))
+   @helper.inputText(empresa("nome"))
+   @helper.inputText(empresa("ramo"))
+   @helper.inputText(empresa("cnpj"))
+   @helper.inputText(empresa("telefone"))
+   @helper.inputText(empresa("email"))
+   @helper.inputText(empresa("site"))
+   @helper.inputText(empresa("endereco"))
+   </fieldset>
+   <input type="submit" value="Criar">
+   </form>
+ }
+}

@@ -1,0 +1,20 @@
+@(empresas: List[Models.entidade.Empresa])
+
+@main("Lista de Cupons"){
+@if(empresas.isEmpty){
+<h3>Não há Empresas cadastradas</h3>
+} else {
+<h3>Empresas Cadastradas:</h3>
+<dl>
+ @for(empresa <- empresas) {
+ <dt>
+
+   @empresa.getId() - @empresa.getNome()
+  </a>
+   @empresa.getId() - @empresa.getNome()
+ </dt>
+ }
+</dl>
+</table>
+}
+}

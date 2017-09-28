@@ -1,17 +1,13 @@
 package Models.controladores;
 
-import Models.abstractfactory.RepositorioAbstractFactory;
 import Models.abstractfactory.RepositorioArrayFactory;
 import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEmpresa;
 import Models.entidade.Empresa;
 import Models.entidade.Vaga;
-import Models.fachada.AdapterEmail;
+import Models.fachada.ServicoEmail;
 import Models.fachada.SubSistemaEmail;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.List;
 
 /**
@@ -58,6 +54,7 @@ public class ControladorEmpresa {
     }
 
     public void enviarMensagem(String emailR, String emailD, String titulo, String mensagem){
-        AdapterEmail.enviarEmail(emailR, emailD, titulo, mensagem);
+        SubSistemaEmail sistema = new ServicoEmail();
+        sistema.enviarEmail(emailR, emailD, titulo, mensagem);
     }
 }

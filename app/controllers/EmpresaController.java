@@ -30,8 +30,9 @@ public class EmpresaController extends Controller {
 
     public Result listarVagas() throws IOException{
         Fachada fachada = getInstance();
-        List<Empresa> empresas = fachada.mostrarTodasEmpresas();
-        return ok(empresaList.render(empresas));
+        Empresa empresa = getInstance().buscarEmpresa("a");
+        List<Vaga> vagas = empresa.getVagas();
+        return ok(vagaList.render(vagas));
     }
     public Result recebeFormVaga() throws IOException{
         Form<Vaga> form = formFactory.form(Vaga.class).bindFromRequest();

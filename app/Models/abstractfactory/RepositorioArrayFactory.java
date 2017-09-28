@@ -1,9 +1,9 @@
 package Models.abstractfactory;
 
-import Models.repositorio.IRepositorioEmpresa;
-import Models.repositorio.IRepositorioEstudante;
-import Models.repositorio.RepositorioEmpresaArray;
-import Models.repositorio.RepositorioEstudanteArray;
+import Models.empresa.IRepositorioEmpresa;
+import Models.estudante.IRepositorioEstudante;
+import Models.empresa.RepositorioEmpresaArray;
+import Models.estudante.RepositorioEstudanteArray;
 
 /**
  * Created by ghds on 26/09/2017.

@@ -1,4 +1,4 @@
-package Models.entidade;
+package Models.util;
 
 public class Endereco {
     private String cep;

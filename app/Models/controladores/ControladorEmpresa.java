@@ -3,10 +3,10 @@ package Models.controladores;
 import Models.abstractfactory.RepositorioArrayFactory;
 import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEmpresa;
-import Models.entidade.Empresa;
-import Models.entidade.Vaga;
-import Models.fachada.ServicoEmail;
-import Models.fachada.SubSistemaEmail;
+import Models.empresa.Empresa;
+import Models.empresa.Vaga;
+import Models.gmail.ISubSistemaEmail;
+import Models.gmail.ServicoEmail;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class ControladorEmpresa {
     }
 
     public void enviarMensagem(String emailR, String emailD, String titulo, String mensagem){
-        SubSistemaEmail sistema = new ServicoEmail();
+        ISubSistemaEmail sistema = new ServicoEmail();
         sistema.enviarEmail(emailR, emailD, titulo, mensagem);
     }
 }

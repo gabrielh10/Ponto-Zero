@@ -1,6 +1,6 @@
-import Models.entidade.Empresa;
-import Models.fachada.Fachada;
-import Models.repositorio.RepositorioEmpresaArray;
+import Models.empresa.Empresa;
+import Models.controladores.Fachada;
+import Models.empresa.RepositorioEmpresaArray;
 import akka.actor.ActorSystem;
 import controllers.AsyncController;
 import controllers.CountController;
@@ -9,8 +9,6 @@ import play.mvc.Result;
 import scala.concurrent.ExecutionContextExecutor;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CompletionStage;
 
 import static org.assertj.core.api.Assertions.assertThat;

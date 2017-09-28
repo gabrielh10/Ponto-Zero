@@ -1,10 +1,9 @@
 package controllers;
 
-import Models.entidade.Empresa;
-import Models.entidade.Vaga;
-import Models.fachada.Fachada;
+import Models.empresa.Empresa;
+import Models.empresa.Vaga;
+import Models.controladores.Fachada;
 
-import play.*;
 import play.data.*;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -14,7 +13,7 @@ import javax.inject.Inject;
 import java.io.IOException;
 import java.util.List;
 
-import static Models.fachada.Fachada.*;
+import static Models.controladores.Fachada.*;
 
 /**
  * Created by ghds on 26/09/2017.

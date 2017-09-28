@@ -1,4 +1,6 @@
-package Models.entidade;
+package Models.empresa;
+
+import Models.util.Endereco;
 
 import java.util.ArrayList;
 import java.util.List;

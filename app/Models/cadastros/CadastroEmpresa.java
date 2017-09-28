@@ -1,9 +1,9 @@
 package Models.cadastros;
 
 import Models.abstractfactory.RepositorioAbstractFactory;
-import Models.entidade.Empresa;
-import Models.entidade.Vaga;
-import Models.repositorio.IRepositorioEmpresa;
+import Models.empresa.Empresa;
+import Models.empresa.Vaga;
+import Models.empresa.IRepositorioEmpresa;
 
 import java.util.List;
 

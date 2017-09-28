@@ -3,7 +3,7 @@ package Models.controladores;
 import Models.abstractfactory.RepositorioArrayFactory;
 import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEstudante;
-import Models.entidade.Estudante;
+import Models.estudante.Estudante;
 
 import java.util.List;
 

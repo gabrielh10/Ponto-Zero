@@ -1,6 +1,4 @@
-package Models.repositorio;
-
-import Models.entidade.Estudante;
+package Models.estudante;
 
 import java.util.ArrayList;
 import java.util.List;

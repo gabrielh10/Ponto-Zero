@@ -1,5 +1,5 @@
-package Models.repositorio;
-import Models.entidade.Estudante;
+package Models.estudante;
+import Models.estudante.Estudante;
 
 import java.util.List;
 

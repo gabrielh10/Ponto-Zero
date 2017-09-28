@@ -1,16 +1,9 @@
-package Models.fachada;
+package Models.controladores;
 
-import Models.abstractfactory.RepositorioAbstractFactory;
-import Models.abstractfactory.RepositorioBDRFactory;
-import Models.controladores.ControladorEmpresa;
-import Models.controladores.ControladorEstudante;
-import Models.entidade.Empresa;
-import Models.entidade.Estudante;
-import Models.entidade.Vaga;
+import Models.empresa.Empresa;
+import Models.estudante.Estudante;
+import Models.empresa.Vaga;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 

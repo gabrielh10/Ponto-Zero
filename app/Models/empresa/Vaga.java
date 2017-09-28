@@ -1,4 +1,4 @@
-package Models.entidade;
+package Models.empresa;
 
 import java.util.Date;
 

@@ -1,7 +1,8 @@
-package Models.repositorio;
+package Models.empresa;
 
-import Models.entidade.Empresa;
-import Models.entidade.Vaga;
+import Models.empresa.Empresa;
+import Models.empresa.IRepositorioEmpresa;
+import Models.empresa.Vaga;
 
 import java.util.ArrayList;
 import java.util.List;

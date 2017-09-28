@@ -1,4 +1,6 @@
-package Models.entidade;
+package Models.estudante;
+
+import Models.util.Endereco;
 
 public class Estudante {
     private String id;

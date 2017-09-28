@@ -1,8 +1,8 @@
 package Models.cadastros;
 
 import Models.abstractfactory.RepositorioAbstractFactory;
-import Models.entidade.Estudante;
-import Models.repositorio.IRepositorioEstudante;
+import Models.estudante.Estudante;
+import Models.estudante.IRepositorioEstudante;
 
 import java.util.List;
 

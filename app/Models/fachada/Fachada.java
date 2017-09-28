@@ -41,6 +41,9 @@ public class Fachada {
       //      String conf = buffer.readLine();
             return "array";
     }
+    public void enviarMensagem(String emailR, String emailD, String titulo, String mensagem){
+        controladorEmpresa.enviarMensagem(emailR, emailD, titulo, mensagem);
+    }
 
     public void cadastrarEmpresa(Empresa empresa){
         controladorEmpresa.cadastrar(empresa);

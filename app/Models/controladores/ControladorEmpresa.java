@@ -6,6 +6,8 @@ import Models.abstractfactory.RepositorioBDRFactory;
 import Models.cadastros.CadastroEmpresa;
 import Models.entidade.Empresa;
 import Models.entidade.Vaga;
+import Models.fachada.AdapterEmail;
+import Models.fachada.SubSistemaEmail;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -53,5 +55,9 @@ public class ControladorEmpresa {
     }
     public void removerVaga(String idVaga, String cnpj){
         cadastroEmpresa.removerVaga(idVaga, cnpj);
+    }
+
+    public void enviarMensagem(String emailR, String emailD, String titulo, String mensagem){
+        AdapterEmail.enviarEmail(emailR, emailD, titulo, mensagem);
     }
 }

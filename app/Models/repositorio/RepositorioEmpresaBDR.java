@@ -1,6 +1,7 @@
 package Models.repositorio;
 
 import Models.entidade.Empresa;
+import Models.entidade.Vaga;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,5 +27,19 @@ public class RepositorioEmpresaBDR implements IRepositorioEmpresa {
     public void remover(Empresa empresa){
 
     }
+    public void adicionarVaga(Vaga vaga, String cnpjEmpresa){
 
+    }
+    public void removerVaga(String idVaga, String cnpj){
+
+    }
+    public Vaga buscarVaga(String idVaga, String cnpj) {
+        Empresa empresa = buscar(cnpj);
+        for(int i=0; i<empresa.getVagas().size();i++){
+            if(empresa.getVagas().get(i).getId().equals(idVaga)){
+                return empresa.getVagas().get(i);
+            }
+        }
+        return null;
+    }
 }

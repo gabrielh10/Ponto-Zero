@@ -1,5 +1,6 @@
 package Models.entidade;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
@@ -11,15 +12,15 @@ public class Empresa {
     private String email;
     private String site;
     private Endereco endereco;
-    private List<Vaga> vagas;
+    private List<Vaga> vagas = new ArrayList<>();
 
-    public Empresa() {
-    }
+    public Empresa() {}
 
     public Empresa(String id, String nome, String cnpj) {
         this.id = id;
         this.nome = nome;
         this.cnpj = cnpj;
+        this.vagas = new ArrayList<>();
     }
 
     public Empresa(String id, String nome, String ramo, String cnpj, String telefone, String email, String site) {
@@ -30,6 +31,7 @@ public class Empresa {
         this.telefone = telefone;
         this.email = email;
         this.site = site;
+        this.vagas = new ArrayList<>();
     }
 
     public List<Vaga> getVagas(){

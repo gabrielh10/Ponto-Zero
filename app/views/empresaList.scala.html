@@ -2,19 +2,22 @@
 
 @main("Lista de Cupons"){
 @if(empresas.isEmpty){
-<h3>Não há Empresas cadastradas</h3>
+<h1>Não há Empresas cadastradas</h1>
 } else {
-<h3>Empresas Cadastradas:</h3>
-<dl>
+<h1>Empresas Cadastradas:</h1>
  @for(empresa <- empresas) {
- <dt>
-
-   @empresa.getId() - @empresa.getNome()
-  </a>
-   @empresa.getId() - @empresa.getNome()
- </dt>
+     <table>
+         <tr>
+             <th>ID / </th>
+             <th>Empresa / </th>
+             <th>CNPJ / </th>
+         </tr>
+         <tr>
+             <td>@empresa.getId</td>
+             <td>@empresa.getNome</td>
+             <td>@empresa.getCnpj</td>
+         </tr>
+     </table>
  }
-</dl>
-</table>
 }
 }

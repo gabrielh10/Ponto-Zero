@@ -1,0 +1,23 @@
+@(vagas: List[Models.entidade.Vaga])
+
+@main("Lista de Cupons"){
+@if(vagas.isEmpty){
+<h1>Não há vagas cadastradas</h1>
+} else {
+<h1>Vagas Cadastradas:</h1>
+ @for(vaga <- vagas) {
+     <table>
+         <tr>
+             <th>ID / </th>
+             <th>Nome / </th>
+             <th>Descricao / </th>
+         </tr>
+         <tr>
+             <td>@vaga.getId</td>
+             <td>@vaga.getNome</td>
+             <td>@vaga.getDescricao</td>
+         </tr>
+     </table>
+ }
+}
+}

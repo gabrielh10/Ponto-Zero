@@ -10,15 +10,30 @@ public class Vaga {
     private String funcao;
     private String descricao;
 
-    public Vaga(String id, String nome, Date dataAbertura, String setor, String funcao, String descricao){
+    public Vaga(){}
+
+    public Vaga(String id, String nome, String descricao){
         this.id = id;
         this.nome = nome;
-        this.dataAbertura = dataAbertura;
+        this.descricao = descricao;
+    }
+
+    public Vaga(String id, String nome, String setor, String funcao, String descricao){
+        this.id = id;
+        this.nome = nome;
         this.setor = setor;
         this.funcao = funcao;
         this.descricao = descricao;
     }
-
+    public void setId(String id){
+        this.id = id;
+    }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setDescricao(String descricao){
+        this.descricao = descricao;
+    }
     public String getId() {
         return id;
     }

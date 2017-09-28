@@ -1,0 +1,14 @@
+@(vaga: Form[Models.entidade.Vaga])
+@import helper._
+
+@main("Cadastrar Vaga") {
+ @helper.form(action = helper.CSRF(routes.EmpresaController.recebeFormVaga())) {
+  <fieldset>
+   @helper.inputText(vaga("id"))
+   @helper.inputText(vaga("nome"))
+   @helper.inputText(vaga("descricao"))
+   </fieldset>
+   <input type="submit" value="Criar">
+   </form>
+ }
+}

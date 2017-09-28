@@ -1,6 +1,7 @@
 package controllers;
 
 import Models.entidade.Empresa;
+import Models.entidade.Vaga;
 import Models.fachada.Fachada;
 
 import play.*;
@@ -22,9 +23,28 @@ public class EmpresaController extends Controller {
     @Inject
     private FormFactory formFactory;
 
-    public void criarVaga() throws IOException {
-
+    public Result cadastrarVaga() throws IOException {
+        Form<Vaga> productForm = formFactory.form(Vaga.class);
+        return ok(vagaCadastro.render(productForm));
     }
+
+    public Result listarVagas() throws IOException{
+        Fachada fachada = getInstance();
+        List<Empresa> empresas = fachada.mostrarTodasEmpresas();
+        return ok(empresaList.render(empresas));
+    }
+    public Result recebeFormVaga() throws IOException{
+        Form<Vaga> form = formFactory.form(Vaga.class).bindFromRequest();
+        if(form.hasErrors()){
+            return badRequest();
+        }
+        Vaga vaga = form.get();
+        getInstance().adicionarVaga(vaga, "a" );
+        Empresa empresa = getInstance().buscarEmpresa("a");
+        List<Vaga> vagas = empresa.getVagas();
+        return ok(vagaList.render(vagas));
+    }
+
     public Result listarEmpresas() throws IOException {         //ajustar objeto sendo cadastro null
         Fachada fachada = getInstance();
         List<Empresa> empresas = fachada.mostrarTodasEmpresas();
